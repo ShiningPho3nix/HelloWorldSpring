@@ -21,5 +21,8 @@
 	<classpathentry kind="lib" path="E:/spring-framework-5.1.4.RELEASE/libs/spring-web-5.1.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="E:/spring-framework-5.1.4.RELEASE/libs/spring-webmvc-5.1.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="E:/spring-framework-5.1.4.RELEASE/libs/spring-websocket-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/apache-log4j-2.11.1-bin/log4j-1.2-api-2.11.1.jar"/>
+	<classpathentry kind="lib" path="E:/apache-log4j-2.11.1-bin/log4j-core-2.11.1.jar"/>
+	<classpathentry kind="lib" path="E:/apache-log4j-2.11.1-bin/log4j-api-2.11.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
