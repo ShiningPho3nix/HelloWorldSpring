@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -17,12 +17,91 @@
 	</bean>
 
 	<bean id="employee" class="com.tutorialspoint.Employee">
-		<constructor-arg value="Steffen Dworsky" type="String">
-		</constructor-arg>
-		<constructor-arg value="404" type="int">
-		</constructor-arg>
+		<constructor-arg value="Steffen Dworsky" type="String"></constructor-arg>
+		<constructor-arg value="404" type="int"></constructor-arg>
 		<constructor-arg>
 			<ref bean="address" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="ans1" class="com.tutorialspoint.Answer">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg
+			value="Inject dependency via Constructor." type="String"></constructor-arg>
+		<constructor-arg value="Steffen Dworsky" type="String"></constructor-arg>
+	</bean>
+
+	<bean id="ans2" class="com.tutorialspoint.Answer">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="Creating a new Constructor."
+			type="String"></constructor-arg>
+		<constructor-arg value="Franz Hubert" type="String"></constructor-arg>
+	</bean>
+
+	<bean id="question" class="com.tutorialspoint.Question">
+		<constructor-arg value="110" type="int"></constructor-arg>
+		<constructor-arg
+			value="What is Constructor Injection?" type="String"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="ans1" />
+				<ref bean="ans2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="questionMap" class="com.tutorialspoint.QuestionWithMap">
+		<constructor-arg value="112" type="int"></constructor-arg>
+		<constructor-arg
+			value="What is Constructor Injection?" type="String"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="Inject dependency via Constructor."
+					value="Steffen Dworsky"></entry>
+				<entry key="Creating a new Constructor." value="Franz Hubert"></entry>
+				<entry key="Sets values via Setter Methods."
+					value="Hans Peter"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="answer1" class="com.tutorialspoint.AnswerWithDate">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg
+			value="Inject dependency via Constructor." type="String"></constructor-arg>
+		<constructor-arg value="05/20/1993" type="Date"></constructor-arg>
+	</bean>
+
+	<bean id="answer2" class="com.tutorialspoint.AnswerWithDate">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="Creating a new Constructor."
+			type="String"></constructor-arg>
+		<constructor-arg value="01/01/2666" type="Date"></constructor-arg>
+	</bean>
+
+	<bean id="user1" class="com.tutorialspoint.User">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="Steffen Dworsky" type="String"></constructor-arg>
+		<constructor-arg value="steffen.dworsky@gmx.de"
+			type="String"></constructor-arg>
+	</bean>
+	<bean id="user2" class="com.tutorialspoint.User">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="Franz Hubert" type="String"></constructor-arg>
+		<constructor-arg value="franz.hubert@gmail.com"
+			type="String"></constructor-arg>
+	</bean>
+
+	<bean id="questionDate"
+		class="com.tutorialspoint.QuestionWithDate">
+		<constructor-arg value="666" type="int"></constructor-arg>
+		<constructor-arg
+			value="What is Constructor Injection?" type="String"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key-ref="answer1" value-ref="user1"></entry>
+				<entry key-ref="answer2" value-ref="user2"></entry>
+			</map>
 		</constructor-arg>
 	</bean>
 </beans>
