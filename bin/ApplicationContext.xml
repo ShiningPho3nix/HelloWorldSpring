@@ -6,39 +6,50 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
+	<bean id="helloWorld"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.HelloWorld">
 		<property name="message" value="Hello World!" />
 		<property name="messageNumber" value="3" />
 	</bean>
 
-	<bean id="address" class="com.tutorialspoint.Address">
+	<bean id="employee1"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.Employee">
+		<constructor-arg value="101"></constructor-arg>
+		<constructor-arg value="Steffen Dworsky"></constructor-arg>
+	</bean>
+
+	<bean id="address"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.Address">
 		<constructor-arg value="Mariana Trench" type="String"></constructor-arg>
 		<constructor-arg value="2001" type="int"></constructor-arg>
+		<constructor-arg value="Pacific Ocean" type="String"></constructor-arg>
 	</bean>
 
-	<bean id="employee" class="com.tutorialspoint.Employee">
+	<bean id="employee2"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.Employee">
 		<constructor-arg value="Steffen Dworsky" type="String"></constructor-arg>
 		<constructor-arg value="404" type="int"></constructor-arg>
-		<constructor-arg>
-			<ref bean="address" />
-		</constructor-arg>
+		<constructor-arg ref="address"></constructor-arg>
 	</bean>
 
-	<bean id="ans1" class="com.tutorialspoint.Answer">
+	<bean id="ans1"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.Answer">
 		<constructor-arg value="1" type="int"></constructor-arg>
 		<constructor-arg
 			value="Inject dependency via Constructor." type="String"></constructor-arg>
 		<constructor-arg value="Steffen Dworsky" type="String"></constructor-arg>
 	</bean>
 
-	<bean id="ans2" class="com.tutorialspoint.Answer">
+	<bean id="ans2"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.Answer">
 		<constructor-arg value="2" type="int"></constructor-arg>
 		<constructor-arg value="Creating a new Constructor."
 			type="String"></constructor-arg>
 		<constructor-arg value="Franz Hubert" type="String"></constructor-arg>
 	</bean>
 
-	<bean id="question" class="com.tutorialspoint.Question">
+	<bean id="question"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.Question">
 		<constructor-arg value="110" type="int"></constructor-arg>
 		<constructor-arg
 			value="What is Constructor Injection?" type="String"></constructor-arg>
@@ -50,7 +61,8 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="questionMap" class="com.tutorialspoint.QuestionWithMap">
+	<bean id="questionMap"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.QuestionWithMap">
 		<constructor-arg value="112" type="int"></constructor-arg>
 		<constructor-arg
 			value="What is Constructor Injection?" type="String"></constructor-arg>
@@ -65,27 +77,32 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="answer1" class="com.tutorialspoint.AnswerWithDate">
+	<bean id="answer1"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.AnswerWithDate">
 		<constructor-arg value="1" type="int"></constructor-arg>
 		<constructor-arg
 			value="Inject dependency via Constructor." type="String"></constructor-arg>
 		<constructor-arg value="05/20/1993" type="Date"></constructor-arg>
 	</bean>
 
-	<bean id="answer2" class="com.tutorialspoint.AnswerWithDate">
+	<bean id="answer2"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.AnswerWithDate">
 		<constructor-arg value="2" type="int"></constructor-arg>
 		<constructor-arg value="Creating a new Constructor."
 			type="String"></constructor-arg>
 		<constructor-arg value="01/01/2666" type="Date"></constructor-arg>
 	</bean>
 
-	<bean id="user1" class="com.tutorialspoint.User">
+	<bean id="user1"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.User">
 		<constructor-arg value="1" type="int"></constructor-arg>
 		<constructor-arg value="Steffen Dworsky" type="String"></constructor-arg>
 		<constructor-arg value="steffen.dworsky@gmx.de"
 			type="String"></constructor-arg>
 	</bean>
-	<bean id="user2" class="com.tutorialspoint.User">
+
+	<bean id="user2"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.User">
 		<constructor-arg value="2" type="int"></constructor-arg>
 		<constructor-arg value="Franz Hubert" type="String"></constructor-arg>
 		<constructor-arg value="franz.hubert@gmail.com"
@@ -93,7 +110,7 @@
 	</bean>
 
 	<bean id="questionDate"
-		class="com.tutorialspoint.QuestionWithDate">
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.ConstructorInjection.QuestionWithDate">
 		<constructor-arg value="666" type="int"></constructor-arg>
 		<constructor-arg
 			value="What is Constructor Injection?" type="String"></constructor-arg>
@@ -103,5 +120,85 @@
 				<entry key-ref="answer2" value-ref="user2"></entry>
 			</map>
 		</constructor-arg>
+	</bean>
+
+	<bean id="addressSetter"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.SetterInjection.AddressSetterInjection">
+		<property name="address" value="Mariana Trench"></property>
+		<property name="city" value="Pacific Ocean"></property>
+		<property name="houseNumber" value="2002"></property>
+	</bean>
+
+	<bean id="EmployeeSetter"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.SetterInjection.EmployeeSetterInjection">
+		<property name="id" value="1"></property>
+		<property name="name" value="Steffen Dworsky"></property>
+		<property name="address" ref="addressSetter"></property>
+	</bean>
+
+	<bean id="QuestionListSetter"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.SetterInjection.QuestionListSetter">
+		<property name="id" value="999"></property>
+		<property name="name" value="What is Setter Injection?"></property>
+		<property name="answers">
+			<list>
+				<value>Set the value of a field with a Setter Method</value>
+				<value>Get the value of a Field of the class</value>
+				<value>Java is a programming language</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="AnswerListSetter1"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.SetterInjection.AnswerListSetter">
+		<property name="id" value="99"></property>
+		<property name="name"
+			value="Set the value of a field with a Setter Method"></property>
+		<property name="by" value="Steffen Dworsky"></property>
+	</bean>
+
+	<bean id="AnswerListSetter2"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.SetterInjection.AnswerListSetter">
+		<property name="id" value="101"></property>
+		<property name="name" value="Java is a programming language"></property>
+		<property name="by" value="Sabaton"></property>
+	</bean>
+
+	<bean id="QuestionListSetterRef"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.SetterInjection.QuestionListSetterRef">
+		<property name="id" value="1001"></property>
+		<property name="name" value="What is Setter Injection?"></property>
+		<property name="answers">
+			<list>
+				<ref bean="AnswerListSetter1" />
+				<ref bean="AnswerListSetter2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="QuestionMapSetter"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.SetterInjection.QuestionMapSetter">
+		<property name="id" value="0"></property>
+		<property name="name" value="What is Setter Injection?"></property>
+		<property name="answers">
+			<map>
+				<entry key="Java is a programming language"
+					value="Steffen Dworsky"></entry>
+				<entry key="Java is a programming language"
+					value="Ramon Fernandez"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="QuestionMapSetterRef"
+		class="de.ShiningPho3nix.SpringFramework.DependencyInjection.SetterInjection.QuestionMapSetterRef">
+		<property name="id" value="12345"></property>
+		<property name="name" value="What is Setter Injection"></property>
+		<property name="answers">
+			<map>
+				<entry key-ref="ans2" value-ref="user2"></entry>
+				<entry key-ref="ans1" value-ref="user1"></entry>
+			</map>
+		</property>
 	</bean>
 </beans>
